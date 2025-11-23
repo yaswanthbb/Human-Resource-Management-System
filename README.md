@@ -13,6 +13,7 @@ A full-stack HR Management System with authentication, employee management, team
 * Responsive UI for desktop + mobile
 * Toast notifications for success & errors
 * Clean and modern dashboard UI
+
 ---
 
 # ⚙️ Backend Setup
@@ -30,18 +31,15 @@ npm install
 CREATE DATABASE hrms;
 ```
 
-## 3️⃣ Create `.env` File
+## 3️⃣ Create `.env` File (use `.env.example`)
 
-Create `backend/.env` and add:
+Copy the example file:
 
 ```
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=yourpassword
-DB_NAME=hrms
-JWT_SECRET=your_secret
-PORT=5000
+cp .env.example .env
 ```
+
+Ensure the values match your local MySQL setup.
 
 ## 4️⃣ Run Server
 
@@ -49,7 +47,7 @@ PORT=5000
 npm run dev
 ```
 
-Backend starts at:
+Backend runs at:
 
 ```
 http://localhost:5000
@@ -84,7 +82,7 @@ http://localhost:5000
 | POST   | `/teams`     | Create team   |
 | DELETE | `/teams/:id` | Delete team   |
 
-### **Team Assignment**
+### **Team Assignment Routes**
 
 | Method | Route                 | Description     |
 | ------ | --------------------- | --------------- |
@@ -100,10 +98,23 @@ http://localhost:5000
 ```
 cd frontend
 npm install
-
 ```
 
-## 2️⃣ Run React App
+## 2️⃣ Create `.env` File (use `.env.example`)
+
+Copy the example file:
+
+```
+cp .env.example .env
+```
+
+Ensure API URL points to your local backend:
+
+```
+VITE_API_URL=http://localhost:5000
+```
+
+## 3️⃣ Run React App
 
 ```
 npm run dev
@@ -117,11 +128,21 @@ http://localhost:5173
 
 ---
 
+# 🔗 Deployments
+
+### **Frontend Deployment:**
+
+[https://human-resource-management-system-beta.vercel.app/](https://human-resource-management-system-beta.vercel.app/)
+
+### **Backend Deployment:**
+
+[https://human-resource-management-system-production-690d.up.railway.app/](https://human-resource-management-system-production-690d.up.railway.app/)
+
+---
 
 # 🔒 Authentication
 
-The frontend stores JWT token in `localStorage`.
-Axios is configured to always send:
+The frontend stores the JWT token in `localStorage` and sends it automatically via Axios:
 
 ```
 Authorization: Bearer <token>
@@ -131,9 +152,6 @@ Authorization: Bearer <token>
 
 # 📝 Notes
 
-* MySQL auto-increments IDs by design — deleting a row does **not** reuse old IDs.
-* Make sure your MySQL server is running before starting backend.
-* Once the server runs for the first time, Sequelize will automatically create tables in your database.
-
-
----
+* MySQL auto-increments IDs — deleting rows does **not** reuse IDs.
+* Ensure MySQL is running before starting backend.
+* Sequelize auto-creates tables on first run.
