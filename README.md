@@ -13,30 +13,6 @@ A full-stack HR Management System with authentication, employee management, team
 * Responsive UI for desktop + mobile
 * Toast notifications for success & errors
 * Clean and modern dashboard UI
-
----
-
-# 📂 Project Structure
-
-```
-backend/
-  ├── config/
-  ├── controllers/
-  ├── middleware/
-  ├── models/
-  ├── routes/
-  ├── server.js
-  └── package.json
-
-frontend/
-  ├── src/
-  │   ├── components/
-  │   ├── pages/
-  │   ├── api/
-  │   └── App.jsx
-  └── package.json
-```
-
 ---
 
 # ⚙️ Backend Setup
@@ -70,7 +46,7 @@ PORT=5000
 ## 4️⃣ Run Server
 
 ```
-npm start
+npm run dev
 ```
 
 Backend starts at:
