@@ -13,9 +13,6 @@ A full-stack HR Management System with authentication, employee management, team
 * Responsive UI for desktop + mobile
 * Toast notifications for success & errors
 * Clean and modern dashboard UI
-
----
-
 ---
 
 # ⚙️ Backend Setup
