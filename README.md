@@ -46,7 +46,7 @@ PORT=5000
 ## 4️⃣ Run Server
 
 ```
-npm start
+npm run dev
 ```
 
 Backend starts at:
